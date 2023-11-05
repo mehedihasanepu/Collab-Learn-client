@@ -5,7 +5,7 @@ const Faq = () => {
 
     return (
         <div style={bgLeftCorner}>
-            <div className="max-w-screen-lg mx-auto pt-20">
+            <div className="max-w-screen-lg mx-auto pt-20 pb-16">
                 <h3 className="text-4xl text-center font-bold pb-10 ">F&Q OF COLLAB LEARN</h3>
 
                 <div className="collapse collapse-plus ">
