@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import UserProfile from "../../component/UserProfile/UserProfile";
 import logo from "../../assets/image/logo.png"
+import "./navbar.css"
 
 const Navbar = () => {
 
@@ -32,10 +33,10 @@ const Navbar = () => {
 
     return (
         <div>
-            <div className="max-w-screen-xl mx-auto mb-1 py-1 ">
+            <div className="max-w-screen-xl mx-auto mb-1 py-2 ">
                     <div className={`flex flex-row items-center md:px-5 justify-between `}>
                         <div>
-                            <img className="w-32 h-16" src={logo} alt="" />
+                            <img className="w-[150px] h-[70px]" src={logo} alt="" />
                         </div>
                         <div className="lg:hidden flex">
                             <UserProfile></UserProfile>
@@ -97,7 +98,7 @@ const Navbar = () => {
                         </div>
 
                         <div className=" hidden lg:flex lg:items-center">
-                            <ul className="menu menu-horizontal pr-36">
+                            <ul className="menu menu-horizontal pr-40">
                                 <li>
                                     <a className="text-base mr-2">
                                         <NavLink to="/">Home</NavLink>
