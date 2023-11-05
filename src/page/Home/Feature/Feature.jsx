@@ -1,4 +1,5 @@
 import useBackground from "../../../hooks/useBackground/useBackground";
+import FeaturesItem from "../../../component/FeaturesItem/FeaturesItem";
 
 const Feature = () => {
     const { bgRightCorner } = useBackground()
@@ -8,8 +9,8 @@ const Feature = () => {
             <div className="max-w-screen-xl mx-auto pt-20">
                 <h3 className="text-4xl text-center font-bold ">SOME GREAT FEATURES OF COLLAB LEARN</h3>
                 <p className="text-center text-gray-600 pt-8">Take The Next Step Toward Your Personal And Professional Goals With Collab Learn</p>
+                <FeaturesItem></FeaturesItem>
 
-                
 
             </div>
         </div>
