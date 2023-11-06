@@ -1,11 +1,22 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Lottie from "lottie-react";
 import singUp from "../../../assets/image/singup.json";
 import useBackground from "../../../hooks/useBackground/useBackground";
 import googleIcon from "../../../assets/icon/google.gif"
 import githubIcon from "../../../assets/icon/github.gif"
+import { useState } from "react";
+import useAuth from "../../../hooks/useAuth/useAuth";
+import { updateProfile } from "firebase/auth";
+import toast from "react-hot-toast";
+
+
+
 const Register = () => {
     const { bgRight } = useBackground()
+    const [registerError, setRegisterError] = useState('');
+    const { createUser, googleSingIn } = useAuth()
+    const navigate = useNavigate()
+
 
     const handleSingUp = e => {
         e.preventDefault();
@@ -16,6 +27,59 @@ const Register = () => {
         const password = form.get("password")
         const accepted = form.get("checked")
         console.log(name, PhotoURL, email, password, accepted);
+
+
+
+
+
+        if (password.length < 6) {
+            setRegisterError('Password should be at least 6 characters or longer');
+            return;
+        }
+        else if (!/[A-Z]/.test(password)) {
+            setRegisterError('Password should have at least 1 uppercase character');
+            return;
+        }
+        else if (!/[!@#$%^&*()_\-+=[\]{}|\\;:'"<>,.?/]/.test(password)) {
+            setRegisterError('Password should have one special character');
+            return;
+        }
+        else if (!accepted) {
+            setRegisterError("Please accept out terms and conditions");
+            return;
+        }
+
+        setRegisterError('')
+
+
+        createUser(email, password)
+            .then(result => {
+                updateProfile(result.user, {
+                    displayName: name,
+                    photoURL: PhotoURL
+                })
+                navigate("/")
+                window.location.reload();
+                toast.success('Sing Up SuccessFull')
+            })
+            .catch(error => {
+                console.error(error);
+            })
+    }
+
+
+
+    const handleGoogleSingIn = () => {
+
+        googleSingIn()
+            .then(result => {
+                navigate("/")
+                console.log(result.user);
+                toast.success('Sing Up SuccessFull')
+            })
+            .catch(error => {
+                console.error(error);
+            })
     }
 
     return (
@@ -26,7 +90,7 @@ const Register = () => {
                         <div className="flex w-full flex-col gap-2">
                             <p className="text-lg">Sing Up with</p>
                             <div className="flex w-full flex-col gap-2">
-                                <button type="button" className="btn gap-2 bg-gray-5">
+                                <button onClick={handleGoogleSingIn} className="btn gap-2 bg-gray-5">
                                     <div className="h-9 w-9">
                                         <img src={googleIcon} alt="" />
                                     </div>
@@ -73,6 +137,7 @@ const Register = () => {
                                 <input className="h-4 w-4" type="checkbox" name="checked" />
                                 <label className="pl-2">Accept <a className="text-blue-500 cursor-pointer">terms and conditions</a></label>
                             </div>
+                            <p className="text-red-600">{registerError}</p>
 
                             <div className="form-control mt-10">
                                 <button type="submit" className="btn  lg w-full bg-gradient-to-r from-[#2205ffea] to-[#19e0ffee]  text-white">Sing Up</button>

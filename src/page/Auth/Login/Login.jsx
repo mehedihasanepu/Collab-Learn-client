@@ -1,11 +1,19 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Lottie from "lottie-react";
 import login from "../../../assets/image/login.json";
 import useBackground from "../../../hooks/useBackground/useBackground";
 import googleIcon from "../../../assets/icon/google.gif"
 import githubIcon from "../../../assets/icon/github.gif"
+import useAuth from "../../../hooks/useAuth/useAuth";
+import { useState } from "react";
+import toast from "react-hot-toast";
 const Login = () => {
     const { bgLeft } = useBackground()
+    const { singIn, googleSingIn } = useAuth()
+    const location = useLocation();
+
+    const navigate = useNavigate()
+    const [loginError, setLoginError] = useState('');
 
 
     const handleLogin = e => {
@@ -14,7 +22,36 @@ const Login = () => {
         const email = form.get("email")
         const password = form.get("password")
         console.log(email, password);
+
+        // sing in user 
+        singIn(email, password)
+            .then(result => {
+                console.log(result.user);
+                navigate(location?.state ? location.state : "/")
+                toast.success('Sing in SuccessFull')
+            })
+            .catch(error => {
+                console.error(error);
+                setLoginError("Invalid Email or Password")
+                toast.error('Invalid Email or Password')
+            })
     }
+
+
+
+    const handleGoogleSingIn = () => {
+
+        googleSingIn()
+            .then(result => {
+                console.log(result.user);
+                navigate(location?.state ? location.state : "/")
+                toast.success('Sing in SuccessFull')
+            })
+            .catch(error => {
+                console.error(error);
+            })
+    }
+
 
     return (
         <div style={bgLeft}>
@@ -28,13 +65,13 @@ const Login = () => {
                         <div className="flex w-full flex-col gap-2">
                             <p className="text-lg">Log in with</p>
                             <div className="flex w-full flex-col gap-2">
-                                <button type="button" className="btn gap-2 bg-gray-5">
+                                <button onClick={handleGoogleSingIn} className="btn gap-2 bg-gray-5">
                                     <div className="h-9 w-9">
                                         <img src={googleIcon} alt="" />
                                     </div>
                                     <span>Login with google</span>
                                 </button>
-                                <button type="button" className="btn gap-2 bg-gray-5">
+                                <button className="btn gap-2 bg-gray-5">
                                     <div className="h-9 w-9">
                                         <img src={githubIcon} alt="" />
                                     </div>
@@ -57,13 +94,11 @@ const Login = () => {
                                     <span className="label-text">Password</span>
                                 </label>
                                 <input placeholder="Password" type="password" name="password" className="input input-bordered max-w-full" />
-
                             </div>
-
+                            <p className="text-red-600">{loginError}</p>
                             <div className="form-control mt-10">
                                 <button type="submit" className="btn  lg w-full bg-gradient-to-r from-[#2205ffea] to-[#19e0ffee]  text-white">Log in</button>
                             </div>
-
 
                             <div>
                                 <p className="pt-2 ">Does not have an account ? <Link to="/singUp" className="text-blue-700 font-bold ">Sing up</Link> </p>

@@ -3,12 +3,13 @@ import { Link, NavLink } from "react-router-dom";
 import UserProfile from "../../component/UserProfile/UserProfile";
 import logo from "../../assets/image/logo.png"
 import "./navbar.css"
+import useAuth from "../../hooks/useAuth/useAuth";
+import toast from "react-hot-toast";
 
 const Navbar = () => {
 
-    // const { user, logOut } = useContext(AuthContext)
+    const { user, logOut } = useAuth()
     const [isDropdownOpen, setDropdownOpen] = useState(false);
-    const [user, setuser] = useState(false)
 
 
     const handleDropdownToggle = () => {
@@ -18,14 +19,14 @@ const Navbar = () => {
 
 
     const handleSingOut = () => {
-        // logOut()
-        //     .then(result => {
-        //         console.log(result.user);
-        //     })
-        //     .catch(error => {
-        //         console.error(error);
-        //         toast.success('Sing Out SuccessFull')
-        //     })
+        logOut()
+            .then(result => {
+                console.log(result.user);
+            })
+            .catch(error => {
+                console.error(error);
+                toast.success('Sing Out SuccessFull')
+            })
     }
 
 

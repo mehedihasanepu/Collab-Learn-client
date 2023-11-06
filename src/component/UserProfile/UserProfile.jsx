@@ -1,10 +1,10 @@
-import { useState } from "react";
+
+import useAuth from "../../hooks/useAuth/useAuth";
 
 
 const UserProfile = () => {
 
-    // const { user } = useContext(AuthContext)
-    const [user, setuser] = useState(true)
+    const { user } = useAuth()
 
     return (
         <div>
