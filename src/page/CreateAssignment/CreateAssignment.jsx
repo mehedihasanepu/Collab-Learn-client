@@ -52,7 +52,7 @@ const CreateAssignment = () => {
                     </h4>
                     <div className="flex justify-center items-center gap-10">
                         <div className="w-[500px]">
-                            <Lottie animationData={createAssignment} loop={true} />;
+                            <Lottie animationData={createAssignment} loop={true} />
                         </div>
                         <div className="bg-[#96c5ff29] w-[600px] rounded-3xl shadow-md shadow-blue-500/20 px-10 mt-10 mx-auto">
                             <form onSubmit={handleCreateAssignment} className=" py-10 mb-2">
