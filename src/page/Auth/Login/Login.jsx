@@ -61,7 +61,7 @@ const Login = () => {
                     <div className="w-[500px]">
                         <Lottie animationData={login} loop={true} />
                     </div>
-                    <div className="bg-[#96c5ff74] w-[500px] rounded-3xl shadow-md shadow-blue-500/20  my-10 mx-auto py-10 px-16">
+                    <div className="bg-[#96c5ff74] w-[500px] rounded-3xl shadow-md shadow-blue-500/50  my-10 mx-auto py-10 px-16">
                         <div className="flex w-full flex-col gap-2">
                             <p className="text-lg">Log in with</p>
                             <div className="flex w-full flex-col gap-2">

@@ -6,13 +6,16 @@ import Lottie from "lottie-react";
 import createAssignment from "../../assets/image/create_Assignment.json";
 import axios from "axios";
 import Swal from "sweetalert2";
+import useAuth from "../../hooks/useAuth/useAuth";
 
 const CreateAssignment = () => {
     const { bgLeftCorner } = useBackground()
-    const [startDate, setStartDate] = useState(new Date());
+    const [dueDate, setDueDate] = useState(new Date());
     const [difficulty, setDifficulty] = useState('');
+    const { user } = useAuth()
+    const userEmail = user?.email
 
-
+    console.log(userEmail);
     const handleCreateAssignment = e => {
         e.preventDefault();
         const form = new FormData(e.currentTarget);
@@ -20,7 +23,7 @@ const CreateAssignment = () => {
         const imgURL = form.get("imgURL");
         const marks = form.get("marks");
         const description = form.get("description");
-        const createAssignment = { title, imgURL, marks, difficulty, startDate, description };
+        const createAssignment = { title, imgURL, marks, difficulty, dueDate, userEmail, description };
         console.log(createAssignment);
         axios.post('http://localhost:5000/allAssignments', createAssignment)
             .then(res => {
@@ -122,8 +125,8 @@ const CreateAssignment = () => {
                                         <span className="label-text">Assignment Due Date</span>
                                     </label>
                                     <DatePicker className="h-full w-full rounded-md border border-blue-gray-200 border-t-transparent  px-3 py-4 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-blue-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
-                                        selected={startDate}
-                                        onChange={(date) => setStartDate(date)} />
+                                        selected={dueDate}
+                                        onChange={(date) => setDueDate(date)} />
 
 
 

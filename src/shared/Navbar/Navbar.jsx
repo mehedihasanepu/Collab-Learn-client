@@ -57,11 +57,11 @@ const Navbar = () => {
                                                 <NavLink to="/">Home</NavLink>
                                             </a >
                                         </li>
-                                        <li>
+                                        <li >
                                             <ul className="p-2">
                                                 <li>
                                                     <a>
-                                                        <NavLink to="/">All Assignments</NavLink>
+                                                        <NavLink to="/allAssignment">All Assignments</NavLink>
                                                     </a>
                                                 </li>
                                                 <li>
@@ -99,19 +99,19 @@ const Navbar = () => {
                         </div>
 
                         <div className=" hidden lg:flex lg:items-center">
-                            <ul className="menu menu-horizontal pr-40">
+                            <ul className="menu menu-horizontal ">
                                 <li>
                                     <a className="text-base mr-2">
                                         <NavLink to="/">Home</NavLink>
                                     </a >
                                 </li>
-                                <li tabIndex={0} >
+                                <li tabIndex={0} className="z-50">
                                     <details>
                                         <summary className="text-base">Assignments</summary>
                                         <ul className="p-2">
                                             <li>
                                                 <a>
-                                                    <NavLink className="text-center" to="/">All Assignments</NavLink>
+                                                    <NavLink className="text-center" to="/allAssignment">All Assignments</NavLink>
                                                 </a>
                                             </li>
                                             <li>

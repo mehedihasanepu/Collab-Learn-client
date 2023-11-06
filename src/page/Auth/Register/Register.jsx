@@ -86,7 +86,7 @@ const Register = () => {
         <div style={bgRight}>
             <div className="max-w-screen-xl mx-auto">
                 <div className="flex justify-center items-center">
-                    <div className="bg-[#96c5ff74] w-[500px] rounded-3xl shadow-md shadow-blue-500/20  mt-10 mx-auto py-10 px-16">
+                    <div className="bg-[#96c5ff74] w-[500px] rounded-3xl shadow-md shadow-blue-500/50  my-10 mx-auto py-10 px-16">
                         <div className="flex w-full flex-col gap-2">
                             <p className="text-lg">Sing Up with</p>
                             <div className="flex w-full flex-col gap-2">
@@ -139,7 +139,7 @@ const Register = () => {
                             </div>
                             <p className="text-red-600">{registerError}</p>
 
-                            <div className="form-control mt-10">
+                            <div className="form-control mt-5">
                                 <button type="submit" className="btn  lg w-full bg-gradient-to-r from-[#2205ffea] to-[#19e0ffee]  text-white">Sing Up</button>
                             </div>
 

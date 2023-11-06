@@ -6,6 +6,8 @@ import MainLayout from "../Layout/MainLayout";
 import Login from "../page/Auth/Login/Login";
 import Register from "../page/Auth/Register/Register";
 import CreateAssignment from "../page/CreateAssignment/CreateAssignment";
+import AllAssignment from "../page/AllAssignment/AllAssignment";
+import AssignmentDetails from "../component/AssignmentDetails/AssignmentDetails";
 
 
 
@@ -20,16 +22,24 @@ const router = createBrowserRouter([
                 element: <Home></Home>
             },
             {
-            path:'login',
-            element:<Login></Login>
+                path: 'login',
+                element: <Login></Login>
             },
             {
-                path:'singUp',
-                element:<Register></Register>
+                path: 'singUp',
+                element: <Register></Register>
             },
             {
-                path:'createAssignment',
-                element:<CreateAssignment></CreateAssignment>
+                path: 'createAssignment',
+                element: <CreateAssignment></CreateAssignment>
+            },
+            {
+                path: 'allAssignment',
+                element: <AllAssignment></AllAssignment>
+            },
+            {
+                path: 'assignmentDetails/:id',
+                element:<AssignmentDetails></AssignmentDetails>
             }
         ]
     },
