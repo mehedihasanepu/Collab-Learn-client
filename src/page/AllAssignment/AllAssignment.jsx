@@ -6,7 +6,7 @@ import useBackground from "../../hooks/useBackground/useBackground";
 
 const AllAssignment = () => {
     const { bgLeftCorner } = useBackground()
-    const { data: allAssignments, isLoading } = useAllAssignment();
+    const { data: allAssignments, isLoading, refetch } = useAllAssignment();
     console.log(allAssignments, isLoading);
     return (
         <div style={bgLeftCorner}>
@@ -18,7 +18,7 @@ const AllAssignment = () => {
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                             {
                                 allAssignments.map((assignment) => (
-                                    <AllAssignmentsCard key={assignment._id} assignment={assignment} />
+                                    <AllAssignmentsCard key={assignment._id} assignment={assignment} refetch={refetch}/>
                                 ))
                             }
                         </div>

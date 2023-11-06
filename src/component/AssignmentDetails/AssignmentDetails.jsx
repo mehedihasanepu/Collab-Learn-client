@@ -20,13 +20,13 @@ const AssignmentDetails = () => {
     return (
 
         <div style={bgLeftCorner}>
-            <div className="max-w-screen-xl mx-auto py-10">
+            <div className="max-w-screen-lg mx-auto py-10">
                 <div className="card  bg-base-100 shadow-xl" data-aos="fade-up"
                     data-aos-anchor-placement="top-bottom">
                     <div>
                         <figure className="h-[60vh] "><img className="w-[100vh]" src={imgURL} alt="car!" /></figure>
                     </div>
-                    <div className="max-w-3xl mx-auto ">
+                    <div className="w-[750px] mx-auto ">
                         <h2 className="text-center text-3xl font-semibold">{title}</h2>
                         <div className="flex justify-between mt-5">
                             <h4 className="text-[17px] font-semibold " >Mark: <span className="text-xl font-semibold text-blue-900">{marks}</span></h4>

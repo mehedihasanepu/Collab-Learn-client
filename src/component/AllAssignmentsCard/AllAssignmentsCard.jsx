@@ -1,8 +1,47 @@
+import axios from "axios";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
+import useAuth from "../../hooks/useAuth/useAuth";
 
-const AllAssignmentsCard = ({ assignment }) => {
-    const { _id, userEmail, difficulty, imgURL, marks,  title} = assignment;
+const AllAssignmentsCard = ({ assignment, refetch }) => {
+    const { _id, userEmail, difficulty, imgURL, marks, title } = assignment;
     console.log(userEmail);
+    const { user } = useAuth()
+    const currentUserEmail = user?.email
+    console.log(currentUserEmail);
+
+    const handleDelete = id => {
+
+
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                if (userEmail !== currentUserEmail) {
+                    Swal.fire({
+                        icon: "error",
+                        title: "Oops...",
+                        text: "This Assignment is not created by you!!"
+                    });
+                    return;
+                }
+                axios.delete(`http://localhost:5000/allAssignments/${id}`)
+                    .then((res) => {
+                        if (res?.data?.deletedCount > 0) {
+                            Swal.fire(`${title}`, "Has been Delete", "success");
+                            refetch();
+                        }
+                    })
+            }
+        })
+    }
+
     return (
         <div>
             <div className="drop-shadow-2xl w-96 ">
@@ -22,6 +61,9 @@ const AllAssignmentsCard = ({ assignment }) => {
                             <Link className="card-actions btn font-medium text-black bg-blue-50 border-slate-300">
                                 <p className="pt-5">Update Assignment</p>
                             </Link>
+                            <button onClick={() => handleDelete(_id)} className="w-full btn font-medium text-black bg-blue-50  border-x-slate-300 border--stone-300">
+                                <p >Delete Assignment</p>
+                            </button>
 
                         </div>
                     </div>
