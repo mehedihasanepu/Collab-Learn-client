@@ -5,6 +5,7 @@ import Home from "../page/Home/Home/Home";
 import MainLayout from "../Layout/MainLayout";
 import Login from "../page/Auth/Login/Login";
 import Register from "../page/Auth/Register/Register";
+import CreateAssignment from "../page/CreateAssignment/CreateAssignment";
 
 
 
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
             {
                 path:'singUp',
                 element:<Register></Register>
+            },
+            {
+                path:'createAssignment',
+                element:<CreateAssignment></CreateAssignment>
             }
         ]
     },

@@ -78,7 +78,7 @@ const Navbar = () => {
                                         </li>
                                         <li>
                                             <a >
-                                                <NavLink to="/">Create Assignments</NavLink>
+                                                <NavLink to="/createAssignment">Create Assignments</NavLink>
                                             </a>
                                         </li>
                                         {
@@ -129,7 +129,7 @@ const Navbar = () => {
                                 </li>
                                 <li>
                                     <a className="text-base">
-                                        <NavLink to="/">Create Assignments</NavLink>
+                                        <NavLink to="/createAssignment">Create Assignments</NavLink>
                                     </a>
                                 </li>
                             </ul>
