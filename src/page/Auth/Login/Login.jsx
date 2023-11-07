@@ -45,10 +45,12 @@ const Login = () => {
             .then(result => {
                 console.log(result.user);
                 navigate(location?.state ? location.state : "/")
-                toast.success('Sing in SuccessFull')
+                toast.success('Sing in SuccessFully')
             })
             .catch(error => {
                 console.error(error);
+                toast.error(error)
+
             })
     }
 

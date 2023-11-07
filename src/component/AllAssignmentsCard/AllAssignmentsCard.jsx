@@ -2,6 +2,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import useAuth from "../../hooks/useAuth/useAuth";
+import { useEffect } from "react";
 
 const AllAssignmentsCard = ({ assignment, refetch }) => {
     const { _id, userEmail, difficulty, imgURL, marks, title } = assignment;
@@ -41,6 +42,9 @@ const AllAssignmentsCard = ({ assignment, refetch }) => {
             }
         })
     }
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
 
     return (
         <div>
@@ -58,7 +62,7 @@ const AllAssignmentsCard = ({ assignment, refetch }) => {
                             <Link to={`/assignmentDetails/${_id}`} className="card-actions btn font-medium text-black bg-blue-50 border-x-slate-300 border-t-stone-300">
                                 <p className="pt-5 ">View Assignment</p>
                             </Link>
-                            <Link className="card-actions btn font-medium text-black bg-blue-50 border-slate-300">
+                            <Link to={`/updateAssignment/${_id}`} className="card-actions btn font-medium text-black bg-blue-50 border-slate-300">
                                 <p className="pt-5">Update Assignment</p>
                             </Link>
                             <button onClick={() => handleDelete(_id)} className="w-full btn font-medium text-black bg-blue-50  border-x-slate-300 border--stone-300">

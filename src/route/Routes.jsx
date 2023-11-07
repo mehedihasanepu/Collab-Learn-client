@@ -8,6 +8,7 @@ import Register from "../page/Auth/Register/Register";
 import CreateAssignment from "../page/CreateAssignment/CreateAssignment";
 import AllAssignment from "../page/AllAssignment/AllAssignment";
 import AssignmentDetails from "../component/AssignmentDetails/AssignmentDetails";
+import UpdateAssignment from "../page/UpdateAssignment/UpdateAssignment";
 
 
 
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
             {
                 path: 'assignmentDetails/:id',
                 element:<AssignmentDetails></AssignmentDetails>
+            },
+            {
+                path:'updateAssignment/:id',
+                element:<UpdateAssignment></UpdateAssignment>
             }
         ]
     },
