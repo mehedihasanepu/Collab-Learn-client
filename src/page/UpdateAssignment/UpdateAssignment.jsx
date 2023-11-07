@@ -1,6 +1,6 @@
 import DatePicker from "react-datepicker";
 import useBackground from "../../hooks/useBackground/useBackground";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import useAuth from "../../hooks/useAuth/useAuth";
 import Lottie from "lottie-react";
 import updateImg from "../../assets/image/updateImg.json";
@@ -14,7 +14,6 @@ const UpdateAssignment = () => {
 
 
     const navigate = useNavigate()
-
     const { bgLeftCorner } = useBackground()
     const [dueDate, setDueDate] = useState(new Date());
     const { user } = useAuth()

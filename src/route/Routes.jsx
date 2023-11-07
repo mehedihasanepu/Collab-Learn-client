@@ -9,6 +9,8 @@ import CreateAssignment from "../page/CreateAssignment/CreateAssignment";
 import AllAssignment from "../page/AllAssignment/AllAssignment";
 import AssignmentDetails from "../component/AssignmentDetails/AssignmentDetails";
 import UpdateAssignment from "../page/UpdateAssignment/UpdateAssignment";
+import SubmittedAssignment from "../page/SubmittedAssignment/SubmittedAssignment";
+import GiveMark from "../page/GiveMark/GiveMark";
 
 
 
@@ -45,6 +47,14 @@ const router = createBrowserRouter([
             {
                 path:'updateAssignment/:id',
                 element:<UpdateAssignment></UpdateAssignment>
+            },
+            {
+                path:'submittedAssignment',
+                element:<SubmittedAssignment></SubmittedAssignment>
+            },
+            {
+                path:'submittedAssignment/:id',
+                element:<GiveMark></GiveMark>
             }
         ]
     },

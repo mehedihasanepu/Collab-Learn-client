@@ -9,7 +9,8 @@ import toast from "react-hot-toast";
 const AssignmentDetails = () => {
     const { bgLeftCorner } = useBackground()
     const { user } = useAuth()
-    const userName = user?.displayName
+    const examineeName = user?.displayName
+    const examineeEmail = user?.email
 
     const { data: allAssignments, isLoading } = useAllAssignment();
     const { id } = useParams()
@@ -19,22 +20,29 @@ const AssignmentDetails = () => {
     const assignmentDetails = allAssignments.find(assignment => assignment._id === id)
     console.log(assignmentDetails);
 
-    const { _id, userEmail, difficulty, imgURL, marks, dueDate, title, description } = assignmentDetails;
+    const { difficulty, imgURL, marks, dueDate, title, description } = assignmentDetails;
     console.log(difficulty);
-
 
     const handleSubmitAssignment = e => {
         e.preventDefault();
         const form = new FormData(e.currentTarget);
         const pdfLink = form.get("pdfLink");
         const quickNote = form.get("quickNote");
-        const status = 'pending'
-        const submitAssignment = { pdfLink, quickNote, title, marks, status, userEmail, userName };
+        const status = 'Pending'
+        const submitAssignment = { pdfLink, quickNote, title, marks, status, examineeEmail, examineeName };
         console.log(submitAssignment);
 
 
 
+        axios.post('http://localhost:5000/submittedAssignment', submitAssignment)
+            .then(res => {
+                console.log(res.data);
+                if (res.data.insertedId) {
+                    toast.success('Assignment Submitted SuccessFully')
+                    e.target.reset();
+                }
 
+            })
 
     }
 
