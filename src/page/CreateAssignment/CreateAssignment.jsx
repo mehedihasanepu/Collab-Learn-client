@@ -26,7 +26,7 @@ const CreateAssignment = () => {
         const description = form.get("description");
         const createAssignment = { title, imgURL, marks, difficulty, dueDate, userEmail, description };
         console.log(createAssignment);
-        axios.post('http://localhost:5000/allAssignments', createAssignment)
+        axios.post('https://collab-learn-backend.vercel.app/allAssignments', createAssignment)
             .then(res => {
                 console.log(res.data);
                 if (res.data.insertedId) {
