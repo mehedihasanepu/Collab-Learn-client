@@ -70,11 +70,10 @@ const GiveMark = () => {
                     </div>
                     <div className="bg-[#96c5ff29]  w-[380px] md:w-[650px] rounded-3xl shadow-md shadow-blue-500/20 px-10 pt-5 mx-auto text-center">
                         <hr />
-                        <div className="inline-flex pt-2 items-center">
-                            <p className="text-base font-semibold">PDF Link:</p>
-                            <a className="link link-primary pl-2"> {pdfLink}</a>
 
-                        </div>
+                        <p className="text-base font-semibold">PDF Link: <span> <a href={pdfLink} className="link link-primary pr-2" target="_blank" rel="noreferrer"> {pdfLink}</a></span></p>
+
+
                         <p className="pt-2 pb-8"> <span className="text-base font-semibold">Examinee Note: </span> {quickNote}</p>
 
 
@@ -121,7 +120,7 @@ const GiveMark = () => {
                             </button>
                         </form>
 
-                       
+
                     </div>
                 </div>
             </div>

@@ -2,28 +2,28 @@
 const useBackground = () => {
 
     const bgLeftCorner = {
-        backgroundImage: `url('/src/assets/image/wave_left_corner.png')`,
+        backgroundImage: `url('https://i.ibb.co/Qvns8V2/wave-left-corner.png')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         minHeight: '500px',
     };
     const bgRightCorner = {
-        backgroundImage: `url('/src/assets/image/wave_right_corner.png')`,
+        backgroundImage: `url('https://i.ibb.co/N7H1d8G/wave-right-corner.png')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         minHeight: '500px',
     };
     const bgRight = {
-        backgroundImage: `url('/src/assets/image/wave_right.png')`,
+        backgroundImage: `url('https://i.ibb.co/RQ1fnqP/wave-right.png')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         minHeight: '500px',
     };
     const bgLeft = {
-        backgroundImage: `url('/src/assets/image/wave_left.png')`,
+        backgroundImage: `url('https://i.ibb.co/fMRP2My/wave-left.png')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',

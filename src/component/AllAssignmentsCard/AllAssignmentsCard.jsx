@@ -54,7 +54,7 @@ const AllAssignmentsCard = ({ assignment, refetch }) => {
                     whileTap={{ scale: 0.9 }}>
 
                     <div className="card glass bg-stone-50 bg-opacity-70">
-                        <figure className=""><img className="h-60 w-full rounded-t-2xl " src={imgURL} alt="car!" /></figure>
+                        <figure className=""><img className="h-60 w-96 rounded-t-2xl " src={imgURL} alt="car!" /></figure>
                         <div className="card-body">
                             <h2 className="card-title text-xl ">{title}</h2>
                             <div className="flex justify-between items-center">

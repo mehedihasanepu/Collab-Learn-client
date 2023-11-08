@@ -2,6 +2,7 @@ import SubmittedAssignmentRow from "../../component/SubmittedAssignmentRow/Submi
 import Loading from "../../component/Loading/Loading";
 import useAllSubmittedAssignment from "../../hooks/useAllSubmittedAssignment/useAllSubmittedAssignment";
 import useBackground from "../../hooks/useBackground/useBackground";
+import { Helmet } from "react-helmet";
 
 const SubmittedAssignment = () => {
     const { bgLeftCorner } = useBackground()
@@ -12,8 +13,11 @@ const SubmittedAssignment = () => {
 
     return (
         <div style={bgLeftCorner}>
+            <Helmet>
+                <title>Submitted Assignment</title>
+            </Helmet>
             <div className="max-w-screen-xl mx-auto">
-            <h2 className=" text-2xl md:text-3xl font-semibold text-center pb-3 text-blue-900">Submitted Assignments</h2>
+                <h2 className=" text-2xl md:text-3xl font-semibold text-center pb-3 text-blue-900">Submitted Assignments</h2>
 
                 <div className="overflow-x-auto ">
                     <table className="table text-center">

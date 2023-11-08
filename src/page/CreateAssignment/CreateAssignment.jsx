@@ -7,6 +7,7 @@ import createAssignment from "../../assets/image/create_Assignment.json";
 import axios from "axios";
 import Swal from "sweetalert2";
 import useAuth from "../../hooks/useAuth/useAuth";
+import { Helmet } from "react-helmet";
 
 const CreateAssignment = () => {
     const { bgLeftCorner } = useBackground()
@@ -47,6 +48,9 @@ const CreateAssignment = () => {
 
     return (
         <div style={bgLeftCorner}>
+            <Helmet>
+                <title>Create Assignment</title>
+            </Helmet>
             <div className="max-w-screen-xl mx-auto ">
                 <div className="relative flex flex-col rounded-xl  text-center bg-clip-border pt-5 pb-16 text-gray-700 shadow-none">
 

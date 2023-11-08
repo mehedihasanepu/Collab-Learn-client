@@ -4,6 +4,7 @@ import useAllSubmittedAssignment from "../../hooks/useAllSubmittedAssignment/use
 import useBackground from "../../hooks/useBackground/useBackground";
 import MyAssignmentRow from "../../component/MyAssignmentRow/MyAssignmentRow";
 import useAuth from "../../hooks/useAuth/useAuth";
+import { Helmet } from "react-helmet";
 
 
 const MyAssignment = () => {
@@ -18,6 +19,9 @@ const MyAssignment = () => {
 
     return (
         <div style={bgRightCorner}>
+            <Helmet>
+                <title>My Assignment</title>
+            </Helmet>
             <div className="max-w-screen-xl mx-auto">
                 <h2 className="text-2xl md:text-3xl font-semibold text-center pb-3 text-blue-900">My Assignments</h2>
                 <div className="overflow-x-auto ">

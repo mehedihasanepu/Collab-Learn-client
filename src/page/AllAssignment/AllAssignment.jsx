@@ -4,6 +4,7 @@ import AllAssignmentsCard from "../../component/AllAssignmentsCard/AllAssignment
 import Loading from "../../component/Loading/Loading";
 import useAllAssignment from "../../hooks/useAllAssignment/useAllAssignment";
 import useBackground from "../../hooks/useBackground/useBackground";
+import { Helmet } from "react-helmet";
 
 const AllAssignment = () => {
     const [sortData, setSortData] = useState('All');
@@ -19,11 +20,11 @@ const AllAssignment = () => {
                 ? allAssignments.filter(easy => easy.difficulty === 'Easy')
                 : allAssignments;
 
-
-
-
     return (
         <div style={bgLeftCorner}>
+            <Helmet>
+                <title>All Assignment</title>
+            </Helmet>
             <div className="max-w-screen-xl mx-auto py-10">
                 <h2 className="text-3xl font-semibold text-center pb-3 text-blue-900">All Assignments</h2>
 
@@ -51,6 +52,9 @@ const AllAssignment = () => {
                             }
                         </div>
                     }
+                </div>
+                <div>
+                    
                 </div>
             </div>
         </div>
