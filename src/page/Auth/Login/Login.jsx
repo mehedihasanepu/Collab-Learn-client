@@ -7,6 +7,7 @@ import githubIcon from "../../../assets/icon/github.gif"
 import useAuth from "../../../hooks/useAuth/useAuth";
 import { useState } from "react";
 import toast from "react-hot-toast";
+import axios from "axios";
 const Login = () => {
     const { bgLeft } = useBackground()
     const { singIn, googleSingIn } = useAuth()
@@ -27,7 +28,19 @@ const Login = () => {
         singIn(email, password)
             .then(result => {
                 console.log(result.user);
-                navigate(location?.state ? location.state : "/")
+
+                const loggedInUser = result.user;
+                console.log(loggedInUser);
+                const user = { email };
+                // access token 
+
+                axios.post('http://localhost:5000/jwt', user, { withCredentials: true })
+                    .then(res => {
+                        console.log(res.data);
+                        if (res.data.success) {
+                            navigate(location?.state ? location?.state : '/')
+                        }
+                    })
                 toast.success('Sing in SuccessFull')
             })
             .catch(error => {
@@ -44,6 +57,7 @@ const Login = () => {
         googleSingIn()
             .then(result => {
                 console.log(result.user);
+
                 navigate(location?.state ? location.state : "/")
                 toast.success('Sing in SuccessFully')
             })
@@ -59,7 +73,7 @@ const Login = () => {
         <div style={bgLeft}>
             <div className="max-w-screen-xl mx-auto">
                 <div className="flex flex-col md:flex-row justify-center items-center px-5">
-                <h4 className="text-4xl mt-0 font-semibold pt-5 flex md:hidden text-blue-gray-900 ">
+                    <h4 className="text-4xl mt-0 font-semibold pt-5 flex md:hidden text-blue-gray-900 ">
                         Login
                     </h4>
                     <div className="w-[300px] md:w-[500px] ">
