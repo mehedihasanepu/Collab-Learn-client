@@ -1,30 +1,35 @@
-import SubmittedAssignmentRow from "../../component/SubmittedAssignmentRow/SubmittedAssignmentRow";
+
 import Loading from "../../component/Loading/Loading";
 import useAllSubmittedAssignment from "../../hooks/useAllSubmittedAssignment/useAllSubmittedAssignment";
 import useBackground from "../../hooks/useBackground/useBackground";
+import MyAssignmentRow from "../../component/MyAssignmentRow/MyAssignmentRow";
+import useAuth from "../../hooks/useAuth/useAuth";
 
-const SubmittedAssignment = () => {
-    const { bgLeftCorner } = useBackground()
+
+const MyAssignment = () => {
+    const { user } = useAuth()
+    const currentUserEmail = user?.email
+    console.log(currentUserEmail);
+    const { bgRightCorner } = useBackground()
     const { data: allSubmittedAssignment, isLoading, refetch } = useAllSubmittedAssignment();
 
-    const filteredAllSubmittedAssignment = allSubmittedAssignment && allSubmittedAssignment.filter(item => item.status === 'Pending');
-    console.log(filteredAllSubmittedAssignment, isLoading);
+    const filteredMyAssignment = allSubmittedAssignment && allSubmittedAssignment.filter(item => item.examineeEmail === currentUserEmail);
+    console.log(filteredMyAssignment, isLoading);
 
     return (
-        <div style={bgLeftCorner}>
+        <div style={bgRightCorner}>
             <div className="max-w-screen-xl mx-auto">
-            <h2 className="text-3xl font-semibold text-center pb-3 text-blue-900">Submitted Assignments</h2>
-
+                <h2 className="text-3xl font-semibold text-center pb-3 text-blue-900">My Assignments</h2>
                 <div className="overflow-x-auto ">
                     <table className="table text-center">
                         {/* head */}
                         <thead className="outline outline-slate-200">
                             <tr className="text-base text-blue-800 px-0 ">
                                 <th >Assignment Name</th>
-                                <th className="px-0 ">Assignment Mark</th>
-                                <th>Examinee name</th>
+                                <th className="px-0">Assignment Mark</th>
+                                <th className="px-0">Obtain marks</th>
                                 <th>Status</th>
-                                <th></th>
+                                <th className="w-80">Feedback</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -32,8 +37,8 @@ const SubmittedAssignment = () => {
                                 <Loading></Loading>
                             ) :
                                 (
-                                    filteredAllSubmittedAssignment.map((assignment) => (
-                                        <SubmittedAssignmentRow key={assignment._id} assignment={assignment} refetch={refetch} />
+                                    filteredMyAssignment.map((myAssignment) => (
+                                        <MyAssignmentRow key={myAssignment._id} myAssignment={myAssignment} refetch={refetch} />
                                     ))
                                 )
                             }
@@ -46,4 +51,4 @@ const SubmittedAssignment = () => {
     );
 };
 
-export default SubmittedAssignment;
+export default MyAssignment;

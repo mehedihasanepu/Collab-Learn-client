@@ -69,7 +69,7 @@ const Navbar = () => {
                                     </li>
                                     <li>
                                         <a>
-                                            <NavLink to="/">My Assignments</NavLink>
+                                            <NavLink to="/myAssignment">My Assignments</NavLink>
                                         </a>
                                     </li>
                                     <li>
@@ -112,7 +112,7 @@ const Navbar = () => {
                             </li>
                             <li>
                                 <a>
-                                    <NavLink className="text-center px-2 py-[5px] bg-gray-100 rounded-md" to="/">My Assignments</NavLink>
+                                    <NavLink className="text-center px-2 py-[5px] bg-gray-100 rounded-md" to="/myAssignment">My Assignments</NavLink>
                                 </a>
                             </li>
                             <li>
