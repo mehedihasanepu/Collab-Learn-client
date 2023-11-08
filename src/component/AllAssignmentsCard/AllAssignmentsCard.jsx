@@ -48,7 +48,7 @@ const AllAssignmentsCard = ({ assignment, refetch }) => {
 
     return (
         <div>
-            <div className="drop-shadow-2xl w-96 ">
+            <div className="drop-shadow-2xl ">
                 <div className="card glass bg-stone-50 bg-opacity-70">
                     <figure className=""><img className="h-60 w-full rounded-t-2xl " src={imgURL} alt="car!" /></figure>
                     <div className="card-body">

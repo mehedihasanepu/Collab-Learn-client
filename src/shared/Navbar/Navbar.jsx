@@ -51,7 +51,7 @@ const Navbar = () => {
                             </label>
 
                             {isDropdownOpen && (
-                                <ul tabIndex={0} className="menu dropdown-content w-56 mt-3 gap-3 z-[2] p-2 shadow relative right-1 bg-white bg-opacity-90 rounded-box flex-row-reverse">
+                                <ul tabIndex={0} className="menu dropdown-content w-56 mt-3 gap-3 z-[2] p-2 shadow relative right-1  bg-white bg-opacity-90 rounded-box flex-row-reverse">
                                     <li>
                                         <a >
                                             <NavLink to="/">Home</NavLink>
@@ -93,7 +93,7 @@ const Navbar = () => {
                         </div>
                     </div>
 
-                    <div className=" hidden lg:flex lg:items-center">
+                    <div className=" hidden lg:flex text-center lg:items-center">
                         <ul className=" menu-horizontal gap-2 mr-5">
                             <li>
                                 <a >

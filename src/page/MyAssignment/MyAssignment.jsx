@@ -19,15 +19,15 @@ const MyAssignment = () => {
     return (
         <div style={bgRightCorner}>
             <div className="max-w-screen-xl mx-auto">
-                <h2 className="text-3xl font-semibold text-center pb-3 text-blue-900">My Assignments</h2>
+                <h2 className="text-2xl md:text-3xl font-semibold text-center pb-3 text-blue-900">My Assignments</h2>
                 <div className="overflow-x-auto ">
                     <table className="table text-center">
                         {/* head */}
                         <thead className="outline outline-slate-200">
                             <tr className="text-base text-blue-800 px-0 ">
                                 <th >Assignment Name</th>
-                                <th className="px-0">Assignment Mark</th>
-                                <th className="px-0">Obtain marks</th>
+                                <th className="md:px-0">Assignment Mark</th>
+                                <th className="md:px-0">Obtain marks</th>
                                 <th>Status</th>
                                 <th className="w-80">Feedback</th>
                             </tr>

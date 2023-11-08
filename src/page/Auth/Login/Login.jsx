@@ -58,12 +58,14 @@ const Login = () => {
     return (
         <div style={bgLeft}>
             <div className="max-w-screen-xl mx-auto">
-                <div className="flex justify-center items-center">
-
-                    <div className="w-[500px]">
+                <div className="flex flex-col md:flex-row justify-center items-center px-5">
+                <h4 className="text-4xl mt-0 font-semibold pt-5 flex md:hidden text-blue-gray-900 ">
+                        Login
+                    </h4>
+                    <div className="w-[300px] md:w-[500px] ">
                         <Lottie animationData={login} loop={true} />
                     </div>
-                    <div className="bg-[#96c5ff74] w-[500px] rounded-3xl shadow-md shadow-blue-500/50  my-10 mx-auto py-10 px-16">
+                    <div className="bg-[#96c5ff74] w-[380px] md:w-[500px] rounded-3xl shadow-md shadow-blue-500/50 my-0 md:my-10 mx-auto py-10 px-8 lg:px-16">
                         <div className="flex w-full flex-col gap-2">
                             <p className="text-lg">Log in with</p>
                             <div className="flex w-full flex-col gap-2">

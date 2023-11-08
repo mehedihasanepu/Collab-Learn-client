@@ -13,7 +13,7 @@ const SubmittedAssignment = () => {
     return (
         <div style={bgLeftCorner}>
             <div className="max-w-screen-xl mx-auto">
-            <h2 className="text-3xl font-semibold text-center pb-3 text-blue-900">Submitted Assignments</h2>
+            <h2 className=" text-2xl md:text-3xl font-semibold text-center pb-3 text-blue-900">Submitted Assignments</h2>
 
                 <div className="overflow-x-auto ">
                     <table className="table text-center">

@@ -84,14 +84,14 @@ const UpdateAssignment = () => {
             <div className="max-w-screen-xl mx-auto ">
                 <div className="relative flex flex-col rounded-xl  text-center bg-clip-border pt-5 pb-16 text-gray-700 shadow-none">
 
-                    <h4 className="text-4xl mt-10  font-semibold text-blue-gray-900 ">
+                    <h4 className="text-4xl mt-10 font-semibold text-blue-gray-900 ">
                         Update Assignment
                     </h4>
-                    <div className="flex justify-center items-center gap-10">
-                        <div className="w-[500px]">
+                    <div className="flex flex-col lg:flex-row justify-center items-center gap-10">
+                        <div className=" w-72 lg:w-[500px]">
                             <Lottie animationData={updateImg} loop={true} />
                         </div>
-                        <div className="bg-[#96c5ff29] w-[600px] rounded-3xl shadow-md shadow-blue-500/20 px-10 mt-10 mx-auto">
+                        <div className="bg-[#96c5ff29] w-[380px] md:w-[600px] rounded-3xl shadow-md shadow-blue-500/20 px-10 lg:mt-10 mx-auto">
                             <form onSubmit={handleUpdateAssignment} className=" py-10 mb-2">
                                 <div className="mb-4 flex flex-col gap-6">
 

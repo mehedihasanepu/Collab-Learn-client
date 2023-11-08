@@ -58,16 +58,17 @@ const GiveMark = () => {
     return (
         <div style={bgLeftCorner}>
             <div className="max-w-screen-xl mx-auto ">
+                <h4 className="text-4xl text-blue-900 pt-5  text-center font-semibold text-blue-gray-900 ">
+                    Give Mark
+                </h4>
+                <div className="flex flex-col lg:flex-row justify-center items-center gap-0 lg:gap-10">
 
-                <div className="flex justify-center items-center gap-10">
-
-                    <div>
-                        <div className="w-[400px]">
+                    <div >
+                        <div className="w-60 lg:w-[400px]">
                             <Lottie animationData={resultImg} loop={true} />
                         </div>
                     </div>
-                    <div className="bg-[#96c5ff29] w-[650px] rounded-3xl shadow-md shadow-blue-500/20 px-10 pt-5 mt-5 mx-auto text-center">
-                        <h3 className="text-3xl text-blue-900 font-semibold pt-5 pb-1">Give Mark</h3>
+                    <div className="bg-[#96c5ff29]  w-[380px] md:w-[650px] rounded-3xl shadow-md shadow-blue-500/20 px-10 pt-5 mx-auto text-center">
                         <hr />
                         <div className="inline-flex pt-2 items-center">
                             <p className="text-base font-semibold">PDF Link:</p>
@@ -78,7 +79,7 @@ const GiveMark = () => {
 
 
 
-                        <form onSubmit={handleGivenAssignmentMark} className=" pb-8 px-10 mb-2">
+                        <form onSubmit={handleGivenAssignmentMark} className=" pb-8 px-0 md:px-10 mb-2">
                             <div className="mb-4 flex  flex-col gap-6">
 
                                 {/* title */}
@@ -120,11 +121,7 @@ const GiveMark = () => {
                             </button>
                         </form>
 
-                        <div className="modal-action">
-                            <form method="dialog">
-                                <button className="btn  btn-circle btn-ghost absolute right-2 top-2">✕</button>
-                            </form>
-                        </div>
+                       
                     </div>
                 </div>
             </div>

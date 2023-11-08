@@ -85,8 +85,11 @@ const Register = () => {
     return (
         <div style={bgRight}>
             <div className="max-w-screen-xl mx-auto">
-                <div className="flex justify-center items-center">
-                    <div className="bg-[#96c5ff74] w-[500px] rounded-3xl shadow-md shadow-blue-500/50  my-10 mx-auto py-10 px-16">
+
+                <div className="flex flex-col-reverse md:flex-row justify-center items-center">
+
+                    <div className="bg-[#96c5ff74] w-[380px] md:w-[500px] rounded-3xl shadow-md shadow-blue-500/50  my-10 mx-auto py-10 
+                    px-8 md:px-16">
                         <div className="flex w-full flex-col gap-2">
                             <p className="text-lg">Sing Up with</p>
                             <div className="flex w-full flex-col gap-2">
@@ -149,9 +152,12 @@ const Register = () => {
                             </div>
                         </form>
                     </div>
-                    <div className="w-[500px]">
+                    <div className="w-[300px] md:w-[500px]">
                         <Lottie animationData={singUp} loop={true} />
                     </div>
+                    <h4 className="text-4xl mt-0 font-semibold pt-5 text-center flex md:hidden text-blue-gray-900 ">
+                    Sing Up
+                </h4>
                 </div>
             </div>
         </div>

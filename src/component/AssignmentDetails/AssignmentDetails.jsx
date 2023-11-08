@@ -50,20 +50,20 @@ const AssignmentDetails = () => {
     return (
 
         <div style={bgLeftCorner}>
-            <div className="max-w-screen-lg mx-auto py-10">
+            <div className="max-w-screen-lg mx-auto py-10 px-5 md:px-0">
                 <div className="card  bg-base-100 shadow-xl" data-aos="fade-up"
                     data-aos-anchor-placement="top-bottom">
                     <div>
                         <figure className="h-[60vh] "><img className="w-[100vh]" src={imgURL} alt="car!" /></figure>
                     </div>
-                    <div className="w-[750px] mx-auto ">
-                        <h2 className="text-center text-3xl font-semibold">{title}</h2>
-                        <div className="flex justify-between mt-5">
+                    <div className=" max-w-xl md:max-w-2xl mx-auto ">
+                        <h2 className="text-center text-2xl md:text-3xl font-semibold">{title}</h2>
+                        <div className="flex flex-col md:flex-row px-5 md:px-0 justify-between mt-5">
                             <h4 className="text-[17px] font-semibold " >Mark: <span className="text-xl font-semibold text-blue-900">{marks}</span></h4>
                             <h4 className="text-[17px] font-semibold " >Difficulty level: <span className="text-xl font-semibold text-blue-900">{difficulty}</span></h4>
                             <h4 className="text-[17px] font-semibold " >Due Date: <span className="text-xl font-semibold text-blue-900">{dueDate.slice(0, 10)}</span></h4>
                         </div>
-                        <p className="mt-5"><span className="text-xl text-blue-900 font-semibold">Assignment Details: </span>{description}</p>
+                        <p className="mt-5 px-5 md:px-0"><span className="text-xl text-blue-900 font-semibold">Assignment Details: </span>{description}</p>
 
 
 

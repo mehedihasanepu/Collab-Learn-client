@@ -5,7 +5,7 @@ import student from "../../assets/image/student.png"
 
 const FeaturesItem = () => {
     return (
-        <div className="grid grid-cols-4 gap-10 pt-16">
+        <div className="grid md:grid-cols-2 px-10 lg:px-0 lg:grid-cols-4 gap-10 pt-16">
 
             <div className=" flex flex-col items-center text-center">
                 <div className="rounded-full bg-blue-100"><img className="w-36 p-5" src={advance} alt="" /></div>
