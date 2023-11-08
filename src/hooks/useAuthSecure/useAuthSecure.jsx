@@ -5,7 +5,7 @@ import useAuth from "../useAuth/useAuth";
 
 
 const axiosSecure = axios.create({
-    baseURL: 'http://localhost:5000/',
+    baseURL: 'https://collab-learn-backend.vercel.app/',
     withCredentials: true
 })
 const useAuthSecure = () => {

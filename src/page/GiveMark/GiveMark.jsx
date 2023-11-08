@@ -33,7 +33,7 @@ const GiveMark = () => {
         const givenAssignmentMark = { pdfLink, quickNote, feedback, title, giveMark, marks, status, examineeEmail, examineeName };
         console.log(givenAssignmentMark);
 
-        axios.put(`http://localhost:5000/submittedAssignment/${_id}`, givenAssignmentMark)
+        axios.put(`https://collab-learn-backend.vercel.app/submittedAssignment/${_id}`, givenAssignmentMark)
             .then(res => {
                 console.log(res.data);
 

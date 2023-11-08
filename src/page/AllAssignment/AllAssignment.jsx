@@ -7,7 +7,6 @@ import useBackground from "../../hooks/useBackground/useBackground";
 
 const AllAssignment = () => {
     const [sortData, setSortData] = useState('All');
-
     const { bgLeftCorner } = useBackground()
     const { data: allAssignments, isLoading, refetch } = useAllAssignment();
     console.log(allAssignments, isLoading);

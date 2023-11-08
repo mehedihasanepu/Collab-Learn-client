@@ -13,6 +13,7 @@ import SubmittedAssignment from "../page/SubmittedAssignment/SubmittedAssignment
 import GiveMark from "../page/GiveMark/GiveMark";
 import MyAssignment from "../page/MyAssignment/MyAssignment";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
+import Errorpage from "../page/ErrorPage/ErrorPage";
 
 
 
@@ -21,6 +22,7 @@ const router = createBrowserRouter([
     {
         path: "/",
         element: <MainLayout></MainLayout>,
+        errorElement:<Errorpage></Errorpage>,
         children: [
             {
                 index: true,

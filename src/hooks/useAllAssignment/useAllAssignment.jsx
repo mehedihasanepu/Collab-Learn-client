@@ -5,7 +5,7 @@ const useAllAssignment = () => {
     const { data, isLoading,  refetch } = useQuery({
         queryKey: ["assignments"],
         queryFn: async () => {
-            const data = await fetch("http://localhost:5000/allAssignments");
+            const data = await fetch("https://collab-learn-backend.vercel.app/allAssignments",{credentials:"include"});
             return await data.json();
         },
     });

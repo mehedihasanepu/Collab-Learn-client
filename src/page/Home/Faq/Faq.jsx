@@ -1,10 +1,10 @@
 import useBackground from "../../../hooks/useBackground/useBackground";
 
 const Faq = () => {
-    const { bgLeftCorner } = useBackground()
+    const { bgRightCorner } = useBackground()
 
     return (
-        <div style={bgLeftCorner}>
+        <div style={bgRightCorner}>
             <div className="max-w-screen-lg mx-auto px-5 lg:px-0 pt-20 pb-16">
                 <h3 className="text-3xl lg:text-4xl text-center font-bold pb-10 ">F&Q OF COLLAB LEARN</h3>
 
