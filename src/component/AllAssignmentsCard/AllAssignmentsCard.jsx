@@ -33,7 +33,7 @@ const AllAssignmentsCard = ({ assignment, refetch }) => {
                     });
                     return;
                 }
-                axios.delete(`https://collab-learn-backend.vercel.app/allAssignments/${id}`)
+                axios.delete(`http://localhost:5000/allAssignments/${id}`)
                     .then((res) => {
                         if (res?.data?.deletedCount > 0) {
                             Swal.fire(`${title}`, "Has been Delete", "success");

@@ -34,7 +34,7 @@ const AssignmentDetails = () => {
 
 
 
-        axios.post('https://collab-learn-backend.vercel.app/submittedAssignment', submitAssignment)
+        axios.post('http://localhost:5000/submittedAssignment', submitAssignment)
             .then(res => {
                 console.log(res.data);
                 if (res.data.insertedId) {
