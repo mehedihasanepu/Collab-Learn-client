@@ -21,13 +21,13 @@ const AllAssignment = () => {
     const pages = [...Array(numberOfPage).keys()]
 
     useEffect(() => {
-        fetch('https://collab-learn-backend.vercel.app/paginationCount')
+        fetch('http://localhost:5000/paginationCount')
             .then(res => res.json())
             .then(data => setCount(data.count))
     }, [])
 
     useEffect(() => {
-        fetch(`https://collab-learn-backend.vercel.app/pagination?page=${currentPage}&size=${itemsPerPage}`)
+        fetch(`http://localhost:5000/pagination?page=${currentPage}&size=${itemsPerPage}`)
             .then(res => res.json())
             .then(data => setAssignmentPage(data))
     }, [currentPage, itemsPerPage])
@@ -102,7 +102,7 @@ const AllAssignment = () => {
                                     </button>)
                                 }
                                 <button onClick={handleNext} className="bg-blue-100 px-5 text-blue-950 text-2xl font-bold  rounded-md">&gt;</button>
-                                <select className="text-lg text-blue-950 outline-2 rounded-md p-2 outline-blue-400" value={itemsPerPage} onChange={handleItemsPerPage}>
+                                <select className="text-lg text-blue-950 outline-2 rounded-md p-2 outline-blue-4 00" value={itemsPerPage} onChange={handleItemsPerPage}>
                                     <option value="6">6</option>
                                     <option value="12">12</option>
                                 </select>

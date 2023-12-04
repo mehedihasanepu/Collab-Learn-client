@@ -1,14 +1,9 @@
-
-
 import { useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-
-
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import './studentReview.css';
-
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import useBackground from '../../../hooks/useBackground/useBackground';
 

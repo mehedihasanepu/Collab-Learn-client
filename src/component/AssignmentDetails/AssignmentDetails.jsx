@@ -34,7 +34,7 @@ const AssignmentDetails = () => {
 
 
 
-        axios.post('https://collab-learn-backend.vercel.app/submittedAssignment', submitAssignment)
+        axios.post('http://localhost:5000/submittedAssignment', submitAssignment)
             .then(res => {
                 console.log(res.data);
                 if (res.data.insertedId) {
@@ -64,17 +64,6 @@ const AssignmentDetails = () => {
                             <h4 className="text-[17px] font-semibold " >Due Date: <span className="text-xl font-semibold text-blue-900">{dueDate.slice(0, 10)}</span></h4>
                         </div>
                         <p className="mt-5 px-5 md:px-0"><span className="text-xl text-blue-900 font-semibold">Assignment Details: </span>{description}</p>
-
-
-
-
-
-
-
-
-
-
-
 
 
                         <div className="flex justify-center my-5 gap-5">
