@@ -21,13 +21,13 @@ const AllAssignment = () => {
     const pages = [...Array(numberOfPage).keys()]
 
     useEffect(() => {
-        fetch('http://localhost:5000/paginationCount')
+        fetch('https://collab-learn-backend.vercel.app/paginationCount')
             .then(res => res.json())
             .then(data => setCount(data.count))
     }, [])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/pagination?page=${currentPage}&size=${itemsPerPage}`)
+        fetch(`https://collab-learn-backend.vercel.app/pagination?page=${currentPage}&size=${itemsPerPage}`)
             .then(res => res.json())
             .then(data => setAssignmentPage(data))
     }, [currentPage, itemsPerPage])

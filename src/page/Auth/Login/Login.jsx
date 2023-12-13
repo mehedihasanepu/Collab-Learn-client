@@ -7,7 +7,7 @@ import githubIcon from "../../../assets/icon/github.gif"
 import useAuth from "../../../hooks/useAuth/useAuth";
 import { useState } from "react";
 import toast from "react-hot-toast";
-import axios from "axios";
+// import axios from "axios";
 const Login = () => {
     const { bgLeft } = useBackground()
     const { singIn, googleSingIn } = useAuth()
@@ -29,18 +29,18 @@ const Login = () => {
             .then(result => {
                 console.log(result.user);
 
-                const loggedInUser = result.user;
-                console.log(loggedInUser);
-                const user = { email };
-                // access token 
+                navigate(location?.state ? location?.state : '/')
 
-                axios.post('http://localhost:5000/jwt', user, { withCredentials: true })
-                    .then(res => {
-                        console.log(res.data);
-                        if (res.data.success) {
-                            navigate(location?.state ? location?.state : '/')
-                        }
-                    })
+                /*    const user = { email };
+                   access token 
+   
+                   axios.post('https://collab-learn-backend.vercel.app/jwt', user, { withCredentials: true })
+                       .then(res => {
+                           console.log(res.data);
+                          
+                       })
+                       
+                       */
                 toast.success('Sing in SuccessFull')
             })
             .catch(error => {

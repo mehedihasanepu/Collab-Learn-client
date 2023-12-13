@@ -4,7 +4,6 @@ import Faq from "../Faq/Faq"
 import { useEffect } from "react";
 import StudentReview from "../StudentReview/StudentReview";
 import { Helmet } from "react-helmet";
-import Pdf from "../Pdf/Pdf";
 
 
 

@@ -1,11 +1,13 @@
+/* eslint-disable react/prop-types */
 import { createContext, useEffect, useState } from "react";
 import app from "../../firebase/firebase.config";
 import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
-import axios from "axios";
+// import axios from "axios";
 
 export const AuthContext = createContext();
 const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
+
 
 
 const AuthProvider = ({ children }) => {
@@ -37,24 +39,24 @@ const AuthProvider = ({ children }) => {
         return signOut(auth)
     }
 
-    useEffect(() => {
+/*  useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, currentUser => {
 
             const userEmail = currentUser?.email || user?.email;
-            const loggedUser = { email: userEmail }
+            const loggedUser = { email: userEmail }  
 
 
             setUser(currentUser)
             console.log('current user', currentUser);
             setLoading(false)
             if (currentUser) {
-                axios.post('http://localhost:5000/jwt', loggedUser, { withCredentials: true })
+                axios.post('https://collab-learn-backend.vercel.app/jwt', loggedUser, { withCredentials: true })
                     .then(res => {
                         console.log('token response', res.data);
                     })
             }
             else {
-                axios.post('http://localhost:5000/logout', loggedUser, { withCredentials: true })
+                axios.post('https://collab-learn-backend.vercel.app/logout', loggedUser, { withCredentials: true })
                     .then(res => {
                         console.log(res.data);
                     })
@@ -63,7 +65,22 @@ const AuthProvider = ({ children }) => {
         return () => {
             unSubscribe();
         }
+    }, []) 
+    
+    */
+
+    useEffect(() => {
+        const unSubscribe = onAuthStateChanged(auth, currentUser => {
+            console.log('user in the auth state', currentUser);
+            setUser(currentUser)
+            setLoading(false)
+        });
+        return () => {
+            unSubscribe();
+        }
     }, [])
+    
+ 
 
 
 

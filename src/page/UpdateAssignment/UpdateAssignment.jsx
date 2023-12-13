@@ -54,7 +54,7 @@ const UpdateAssignment = () => {
             return navigate('/allAssignment')
 
         }
-        axios.put(`http://localhost:5000/assignment/${_id}`, updateAssignment)
+        axios.put(`https://collab-learn-backend.vercel.app/assignment/${_id}`, updateAssignment)
             .then(res => {
                 console.log(res.data);
 
